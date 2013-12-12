@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gorila Page</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+</head>
+<body>
+    <h2>Gorilaaaaaa</h2>
+    <div id="div1">
+        <form id="form1">
+            <label> Adaugare gorila </label> <br/>
+            <input type="text" id="nume" placeholder="Nume" required><br />
+            <input type="number" id="varsta" placeholder="Varsta" required><br />
+            <textarea id="descriere" rows="5" cols="16" placeholder="Descriere" required></textarea><br />
+            <input type="button" id="submit" value="Submit">
+        </form>
+    </div>
+    <div id="div2">
+        <label> Lista de gorile </label>
+        <textarea id="details" rows="7" cols="20" readonly></textarea><br/>
+        <button type="button" id="getList">Get List!</button><br/>
+        <table id="tabel1" border="1" align="center">
+            <thead>
+                <tr>
+                    <td> Nume </td>
+                    <td> Varsta </td>
+                    <td> Descriere </td>
+                </tr>
+            </thead>
+            <tbody id="bodyt1"></tbody>
+        </table>
+    </div>
+</body>
+</html>
