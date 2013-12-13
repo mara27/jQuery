@@ -11,7 +11,11 @@ namespace jQueryProject.Models
         public int Varsta { get; set; }
         public string Descriere { get; set; }
 
-        public Gorila(string Nume, int Varsta, string Descriere) { }
+        public Gorila(string nume, int varsta, string descriere) {
+            Nume = nume;
+            Varsta = varsta;
+            Descriere = descriere;
+        }
 
         public Gorila()
         {

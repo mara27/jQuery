@@ -1,4 +1,33 @@
-﻿$(document).ready(function () {
+﻿
+function showGorilla(name) {
+    $.ajax({
+        url: "/Home/ShowDetails",
+        dataType: "Json",
+        data: { name: name },
+        contentType: "application/json",
+        success: function (data) {
+            alert("Datele din tabel au fost primite!");
+
+            showDetails(data);
+        },
+        error: function () {
+            alert("Datele din tabel NU au fost primite");
+        }
+
+    });
+}
+
+function showDetails(details) {
+    $("#details").empty();
+    //for (var i = 0; i < details.length; i++)
+    $("#details").append("Nume: " + details.Nume + "\n" +
+        "Varsta: " + details.Varsta + "\n" +
+        "Descriere: " +  details.Descriere);
+}
+
+$(document).ready(function () {
+
+
     var lista;
     $("#getList").click(function () {
         $.ajax({
@@ -23,7 +52,8 @@
             $("#tabel1").append("<tr>" + "<td>" + lista[i].Nume + "</td>" +
                 "<td>" + lista[i].Varsta + "</td>" +
                 "<td>" + lista[i].Descriere + "</td>" +
-                "<td>" + '<button type="button" id="show">' + "Show" + "</button>" + "</tr>");
+                "<td>" + '<button type="button" id="show" onclick="showGorilla(\''+ lista[i].Nume+'\')">' + "Show" + "</button>" + "</tr>");
+
     }
 
     $("#submit").click(function () {
@@ -53,28 +83,8 @@
         });
     });
     
-    var details;
+    
 
-    $("#show").click(function () {
-        $.ajax({
-            url: "/Home/ShowDetails",
-            dataType: "Json",
-            contentType: "application/json",
-            success: function (data) {
-                alert("Datele din tabel au fost primite!");
-                details = data;
-                showDetails();
-            },
-            error: function () {
-                alert("Datele din tabel NU au fost primite");
-            }
 
-        });
-    });
-
-    function showDetails() {
-        $("#details").empty();
-        for (var i = 0; i < details.length; i++)
-            $("#details").append("<p>" + details[i] + "</p>");
-    }
+    
 });
