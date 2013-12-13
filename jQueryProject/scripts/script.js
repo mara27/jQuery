@@ -6,12 +6,12 @@ function showGorilla(name) {
         data: { name: name },
         contentType: "application/json",
         success: function (data) {
-            alert("Datele din tabel au fost primite!");
+            //alert("Datele din tabel au fost primite!");
 
             showDetails(data);
-        },
-        error: function () {
-            alert("Datele din tabel NU au fost primite");
+        //},
+        //error: function () {
+        //    alert("Datele din tabel NU au fost primite");
         }
 
     });
@@ -35,12 +35,12 @@ $(document).ready(function () {
             dataType: "Json",
             contentType: "application/json",
             success: function (data) {
-                alert("Datele au fost primite!");
+                //alert("Datele au fost primite!");
                 lista = data;
                 populareTabel();
-            },
-            error: function () {
-                alert("Datele nu au fost primite!");
+            //},
+            //error: function () {
+            //    alert("Datele nu au fost primite!");
             }
         });
     });
@@ -74,11 +74,11 @@ $(document).ready(function () {
             dataType: "json",
             contentType: "application/json",
             success: function () {
-                alert("Datele au fost trimise!");
+                //alert("Datele au fost trimise!");
                 $("#getList").trigger("click");
-            },
-            error: function () {
-                alert("Datele NU au fost trimise!");
+            //},
+            //error: function () {
+            //    alert("Datele NU au fost trimise!");
             }
         });
     });
